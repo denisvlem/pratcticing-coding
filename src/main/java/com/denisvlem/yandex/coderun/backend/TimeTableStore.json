@@ -1,0 +1,23 @@
+{
+  "alex": {
+    "1": [
+      {
+        "time": "02:00",
+        "duration": "2minutes",
+        "names": ["alex", "bob", "candy"]
+      },
+      {
+        "time": "03:00",
+        "duration": "100minutes",
+        "names": ["alex", "daniel", "bob"]
+      }
+    ],
+    "2" : [
+      {
+        "time": "02:00",
+        "duration": "2minutes",
+        "names": ["alex", "bob", "candy"]
+      }
+    ]
+  }
+}
