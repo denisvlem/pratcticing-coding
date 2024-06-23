@@ -2,6 +2,11 @@ package com.denisvlem.strings;
 
 import java.util.HashMap;
 
+/**
+ * 13. Roman to Integer
+ *
+ * @see <a href="https://leetcode.com/problems/roman-to-integer/description/>
+ */
 public class RomanToInt {
 
   public int romanToInt(String s) {

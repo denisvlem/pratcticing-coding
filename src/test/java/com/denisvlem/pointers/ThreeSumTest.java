@@ -2,7 +2,6 @@ package com.denisvlem.pointers;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,12 +20,6 @@ class ThreeSumTest {
   @MethodSource("getArgs")
   void threeSum(int[] givenArray, List<List<Integer>> expectedList) {
     List<List<Integer>> result = new ThreeSum().threeSum(givenArray);
-
     assertThat(result).asList().isEqualTo(expectedList);
-
-    var set = new HashSet<List<Integer>>();
-    set.add(List.of(1, 2, 3));
-    set.add(List.of(3, 1, 2));
-    assertThat(set).hasSize(1);
   }
 }
