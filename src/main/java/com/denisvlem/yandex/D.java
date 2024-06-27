@@ -1,4 +1,4 @@
-package com.denisvlem;
+package com.denisvlem.yandex;
 
 import java.io.BufferedReader;
 import java.io.IOException;

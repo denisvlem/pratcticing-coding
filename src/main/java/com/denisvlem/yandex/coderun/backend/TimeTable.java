@@ -37,7 +37,7 @@ public class TimeTable {
                     var time = LocalTime.parse(arguments[2] + ":00");
                     var duration = Duration.ofMinutes(Integer.parseInt(arguments[3]));
                     var names = Arrays.stream(arguments).skip(5).collect(Collectors.toList());
-                    var addResult =  tryToAdd(day, time, duration, names);
+                    var addResult = tryToAdd(day, time, duration, names);
                     System.out.println(addResult);
                 } else if (line.startsWith("PRINT ")) {
                     var arguments = line.split(" ");
