@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class ListNode {
 
-  private final int val;
-  public ListNode next;
+  final int val;
+  ListNode next;
 
   public ListNode(int val) {
     this.val = val;
@@ -38,5 +38,17 @@ public class ListNode {
     int result = val;
     result = 31 * result + (next != null ? next.hashCode() : 0);
     return result;
+  }
+
+  @Override
+  public String toString() {
+    var builder = new StringBuilder();
+    var current = this;
+    while (current != null) {
+      builder.append(current.val).append(" ");
+      current = current.next;
+    }
+
+    return builder.toString().trim();
   }
 }
