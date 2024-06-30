@@ -44,11 +44,30 @@ public class ListNode {
   public String toString() {
     var builder = new StringBuilder();
     var current = this;
+
+    if (hasCycle()) {
+      return "";
+    }
+
     while (current != null) {
       builder.append(current.val).append(" ");
       current = current.next;
     }
 
     return builder.toString().trim();
+  }
+
+  private boolean hasCycle() {
+    ListNode oneStep = this;
+    ListNode doubleStep = this;
+
+    while (doubleStep != null && doubleStep.next != null) {
+      oneStep = oneStep.next;
+      doubleStep = doubleStep.next.next;
+      if (oneStep == doubleStep) {
+        return true;
+      }
+    }
+    return false;
   }
 }
