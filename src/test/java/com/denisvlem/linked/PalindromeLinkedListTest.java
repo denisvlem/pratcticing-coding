@@ -12,6 +12,9 @@ class PalindromeLinkedListTest {
   static Stream<Arguments> getArgs() {
     return Stream.of(
         Arguments.of(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4)))), false),
+        Arguments.of(
+            new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2, new ListNode(1))))),
+            true),
         Arguments.of(new ListNode(1, new ListNode(1)), true),
         Arguments.of(new ListNode(1), true)
     );
@@ -21,5 +24,11 @@ class PalindromeLinkedListTest {
   @ParameterizedTest
   void isPalindrome(ListNode givenList, boolean expectedResult) {
     assertThat(new PalindromeLinkedList().isPalindrome(givenList)).isEqualTo(expectedResult);
+  }
+
+  @MethodSource("getArgs")
+  @ParameterizedTest
+  void isPalindrome2(ListNode givenList, boolean expectedResult) {
+    assertThat(new PalindromeLinkedList().isPalindrome2(givenList)).isEqualTo(expectedResult);
   }
 }
