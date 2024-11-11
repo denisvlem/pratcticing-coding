@@ -25,7 +25,6 @@ public class PreorderTraversal {
         currentNode = currentNode.right;
       }
     }
-
     return resultList;
   }
 }

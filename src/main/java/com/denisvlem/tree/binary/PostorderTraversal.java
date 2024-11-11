@@ -1,6 +1,5 @@
 package com.denisvlem.tree.binary;
 
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,20 +9,22 @@ import java.util.List;
  */
 public class PostorderTraversal {
 
+  /**
+   * The key to solution is it's like the {@link PreorderTraversal} but in the opposite order
+   */
   public List<Integer> postorderTraversal(TreeNode root) {
     var result = new LinkedList<Integer>();
-    Deque<TreeNode> stack = new LinkedList<>();
-
+    var stack = new LinkedList<TreeNode>();
     var currentNode = root;
 
     while (!stack.isEmpty() || currentNode != null) {
       if (currentNode != null) {
         stack.push(currentNode);
-        result.addFirst(currentNode.val);
+        result.push(currentNode.val);
         currentNode = currentNode.right;
       } else {
-        TreeNode node = stack.pop();
-        currentNode = node.left;
+        currentNode = stack.pop();
+        currentNode = currentNode.left;
       }
     }
     return result;
